@@ -2,7 +2,7 @@
 
 namespace He426100\Casbin\Exceptions;
 
-use Symfony\Component\HttpKernel\Exception\HttpException;
+use Hyperf\HttpMessage\Exception\HttpException;
 
 class UnauthorizedException extends HttpException
 {
