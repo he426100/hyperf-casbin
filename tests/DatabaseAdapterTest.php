@@ -1,8 +1,8 @@
 <?php
 
-namespace Donjan\Casbin\Tests;
+namespace He426100\Casbin\Tests;
 
-use Donjan\Casbin\Enforcer;
+use He426100\Casbin\Enforcer;
 use Casbin\Persist\Adapters\Filter;
 use Casbin\Exceptions\InvalidFilterTypeException;
 
@@ -168,7 +168,7 @@ class DatabaseAdapterTest extends TestCase
             $e = InvalidFilterTypeException::class;
             $this->fail("Expected exception $e not thrown");
         } catch (InvalidFilterTypeException $e) {
-            $this->expectExceptionMessage($e->getMessage());
+            $this->assertEquals("invalid filter type", $e->getMessage());
         }
 
         // string

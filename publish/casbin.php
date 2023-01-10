@@ -14,7 +14,7 @@ return [
      * Casbin adapter .
      */
     'adapter' => [
-        'class' => \Donjan\Casbin\Adapters\Mysql\DatabaseAdapter::class,
+        'class' => \He426100\Casbin\Adapters\Mysql\DatabaseAdapter::class,
         'constructor' => [
             'tableName' => 'casbin_rule'
         ],
@@ -24,7 +24,7 @@ return [
      */
     'watcher' => [
         'enabled' => false,
-        'class' => \Donjan\Casbin\Watchers\RedisWatcher::class,
+        'class' => \He426100\Casbin\Watchers\RedisWatcher::class,
         'constructor' => [
             'channel' => 'casbin'
         ],

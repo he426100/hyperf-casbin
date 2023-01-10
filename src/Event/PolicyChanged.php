@@ -1,6 +1,6 @@
 <?php
 
-namespace Donjan\Casbin\Event;
+namespace He426100\Casbin\Event;
 
 class PolicyChanged
 {

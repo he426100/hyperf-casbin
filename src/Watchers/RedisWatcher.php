@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Donjan\Casbin\Watchers;
+namespace He426100\Casbin\Watchers;
 
 use Casbin\Persist\Watcher;
 use Hyperf\Redis\Redis;

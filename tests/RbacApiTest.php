@@ -1,8 +1,8 @@
 <?php
 
-namespace Donjan\Casbin\Tests;
+namespace He426100\Casbin\Tests;
 
-use Donjan\Casbin\Enforcer;
+use He426100\Casbin\Enforcer;
 
 class RbacApiTest extends TestCase
 {

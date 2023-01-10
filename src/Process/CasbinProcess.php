@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Donjan\Casbin\Process;
+namespace He426100\Casbin\Process;
 
 use Hyperf\Process\AbstractProcess;
 use Hyperf\Redis\Redis;
-use Donjan\Casbin\Event\PipeMessage;
+use He426100\Casbin\Event\PipeMessage;
 use Swoole\Server;
 
 class CasbinProcess extends AbstractProcess
 {
 
-    public $name = 'casbin-watcher';
+    public string $name = 'casbin-watcher';
 
     /**
      * @var Server

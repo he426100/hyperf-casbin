@@ -1,6 +1,6 @@
 <?php
 
-namespace Donjan\Casbin;
+namespace He426100\Casbin;
 
 use Psr\Container\ContainerInterface;
 use Casbin\Enforcer as BaseEnforcer;

@@ -1,11 +1,11 @@
 <?php
 
-namespace Donjan\Casbin\Listener;
+namespace He426100\Casbin\Listener;
 
 use Psr\Container\ContainerInterface;
 use Hyperf\Event\Contract\ListenerInterface;
-use Donjan\Casbin\Event\PolicyChanged;
-use Donjan\Casbin\Event\PipeMessage;
+use He426100\Casbin\Event\PolicyChanged;
+use He426100\Casbin\Event\PipeMessage;
 use Swoole\Server;
 use Hyperf\Process\ProcessCollector;
 use Hyperf\Server\ServerManager;
@@ -30,7 +30,7 @@ class OnPolicyChangedListener implements ListenerInterface
         ];
     }
 
-    public function process(object $event)
+    public function process(object $event): void
     {
         if (config('casbin.watcher.enabled')) { //启用watcher，不响应此事件
             return;

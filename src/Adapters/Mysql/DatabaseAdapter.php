@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Donjan\Casbin\Adapters\Mysql;
+namespace He426100\Casbin\Adapters\Mysql;
 
 use Psr\Container\ContainerInterface;
 use Hyperf\Database\Schema\Schema;
 use Hyperf\Database\Schema\Blueprint;
-use Donjan\Casbin\Adapters\Mysql\Rule;
+use He426100\Casbin\Adapters\Mysql\Rule;
 use Hyperf\DbConnection\Db;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Casbin\Persist\Adapter;
@@ -16,8 +16,9 @@ use Casbin\Persist\UpdatableAdapter;
 use Casbin\Persist\FilteredAdapter;
 use Casbin\Model\Model;
 use Casbin\Persist\AdapterHelper;
+use Casbin\Persist\Adapters\Filter;
 use Casbin\Exceptions\InvalidFilterTypeException;
-use Donjan\Casbin\Event\PolicyChanged;
+use He426100\Casbin\Event\PolicyChanged;
 
 /**
  * DatabaseAdapter.

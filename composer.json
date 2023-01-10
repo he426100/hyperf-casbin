@@ -1,5 +1,5 @@
 {
-    "name": "donjan-deng/hyperf-casbin",
+    "name": "he426100/hyperf-casbin",
     "keywords": [
         "hyperf",
         "casbin",
@@ -16,44 +16,52 @@
             "name": "Donjan",
             "homepage": "https://github.com/donjan-deng",
             "role": "Developer"
+        },
+        {
+            "name": "He426100",
+            "homepage": "https://github.com/he426100",
+            "role": "Developer"
         }
     ],
     "license": "Apache-2.0",
     "require": {
-        "php": ">=7.3",
+        "php": ">=8.0",
         "ext-swoole": ">=4.5",
-        "hyperf/database": "~2.2",
-        "hyperf/redis": "~2.2",
-        "hyperf/process": "~2.2",
-        "hyperf/db-connection": "~2.2",
-        "hyperf/cache": "~2.2",
-        "hyperf/utils": "~2.2",
-        "hyperf/config": "~2.2",
-        "hyperf/logger": "~2.2",
+        "hyperf/database": "^3.0.0",
+        "hyperf/redis": "^3.0.0",
+        "hyperf/process": "^3.0.0",
+        "hyperf/db-connection": "^3.0.0",
+        "hyperf/cache": "^3.0.0",
+        "hyperf/utils": "^3.0.0",
+        "hyperf/config": "^3.0.0",
+        "hyperf/logger": "^3.0.0",
         "casbin/casbin": "~3.20",
-        "hyperf/command": "~2.2",
-        "casbin/psr3-bridge": "~1.3"
+        "hyperf/command": "^3.0.0",
+        "casbin/psr3-bridge": "~1.3",
+        "symfony/http-kernel": "^6.2"
     },
     "require-dev": {
-        "hyperf/testing": "~2.2",
-        "mockery/mockery": "~1.4"
+        "hyperf/testing": "^3.0.0",
+        "mockery/mockery": "~1.4",
+        "phpstan/phpstan": "^1.9"
     },
     "autoload": {
         "psr-4": {
-            "Donjan\\Casbin\\": "src/"
+            "He426100\\Casbin\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Donjan\\Casbin\\Tests\\": "tests/"
+            "He426100\\Casbin\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "test": "co-phpunit -c phpunit.xml --colors=always"
+        "test": "co-phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 300M -l 0 -c phpstan.neon ./src ./tests"
     },
     "extra": {
         "hyperf": {
-            "config": "Donjan\\Casbin\\ConfigProvider"
+            "config": "He426100\\Casbin\\ConfigProvider"
         }
     }
 }

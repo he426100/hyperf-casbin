@@ -1,10 +1,10 @@
 <?php
 
-namespace Donjan\Casbin;
+namespace He426100\Casbin;
 
-use Donjan\Casbin\Listener\OnPipeMessageListener;
-use Donjan\Casbin\Listener\OnPolicyChangedListener;
-use Donjan\Casbin\Process\CasbinProcess;
+use He426100\Casbin\Listener\OnPipeMessageListener;
+use He426100\Casbin\Listener\OnPolicyChangedListener;
+use He426100\Casbin\Process\CasbinProcess;
 use Casbin\Enforcer;
 
 class ConfigProvider

@@ -18,7 +18,7 @@ Swoole\Runtime::enableCoroutine(true);
 
 require BASE_PATH . '/vendor/autoload.php';
 
-$container = new Container((new DefinitionSourceFactory(true))());
+$container = new Container((new DefinitionSourceFactory())());
 $container->set(ConfigInterface::class, $config = new Config([]));
 
 ApplicationContext::setContainer($container);

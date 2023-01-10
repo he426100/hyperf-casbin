@@ -1,6 +1,6 @@
 <?php
 
-namespace Donjan\Casbin\Exceptions;
+namespace He426100\Casbin\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
 

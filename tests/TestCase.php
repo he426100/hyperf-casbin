@@ -1,6 +1,6 @@
 <?php
 
-namespace Donjan\Casbin\Tests;
+namespace He426100\Casbin\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Hyperf\Database\Schema\Schema;
@@ -10,7 +10,7 @@ use Hyperf\Utils\ApplicationContext;
 use Hyperf\Cache\Driver\FileSystemDriver;
 use Hyperf\Utils\Packer\PhpSerializerPacker;
 use Hyperf\Contract\ApplicationInterface;
-use Donjan\Casbin\Enforcer;
+use He426100\Casbin\Enforcer;
 use Mockery;
 
 abstract class TestCase extends BaseTestCase
@@ -23,7 +23,7 @@ abstract class TestCase extends BaseTestCase
     protected function setUp(): void
     {
         $this->container = ApplicationContext::getContainer();
-        $this->container->define(\Casbin\Enforcer::class, \Donjan\Casbin\EnforcerFactory::class);
+        $this->container->define(\Casbin\Enforcer::class, \He426100\Casbin\EnforcerFactory::class);
         $this->config = $this->container->get(ConfigInterface::class);
         $this->app = $this->container->get(ApplicationInterface::class);
         $this->initConfig();
@@ -60,14 +60,14 @@ abstract class TestCase extends BaseTestCase
                 'config_text' => '',
             ],
             'adapter' => [
-                'class' => \Donjan\Casbin\Adapters\Mysql\DatabaseAdapter::class,
+                'class' => \He426100\Casbin\Adapters\Mysql\DatabaseAdapter::class,
                 'constructor' => [
                     'tableName' => 'casbin_rule'
                 ],
             ],
             'watcher' => [
                 'enabled' => false,
-                'class' => \Donjan\Casbin\Watchers\RedisWatcher::class,
+                'class' => \He426100\Casbin\Watchers\RedisWatcher::class,
                 'constructor' => [
                     'channel' => 'casbin'
                 ],
@@ -77,8 +77,8 @@ abstract class TestCase extends BaseTestCase
             ]
         ]);
         $this->config->set('listeners', [
-            \Donjan\Casbin\Listener\OnPipeMessageListener::class,
-            \Donjan\Casbin\Listener\OnPolicyChangedListener::class
+            \He426100\Casbin\Listener\OnPipeMessageListener::class,
+            \He426100\Casbin\Listener\OnPolicyChangedListener::class
         ]);
     }
 
