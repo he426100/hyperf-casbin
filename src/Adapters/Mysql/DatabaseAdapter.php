@@ -28,47 +28,37 @@ class DatabaseAdapter implements Adapter, BatchAdapter, UpdatableAdapter, Filter
 
     use AdapterHelper;
 
-    /**
-     * @var bool
-     */
-    private $filtered = false;
+    private bool $filtered = false;
 
     /**
      * Rules eloquent model.
-     *
-     * @var Rule
      */
-    protected $eloquent;
+    protected Rule $eloquent;
 
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
+    private ContainerInterface $container;
 
     /**
      * Db
-     * @var Db 
      */
-    protected $db;
+    protected Db $db;
 
     /**
      * Db
-     * @var EventDispatcherInterface 
      */
-    protected $eventDispatcher;
+    protected EventDispatcherInterface $eventDispatcher;
 
     /**
      * tableName
-     * @var tableName 
      */
-    protected $tableName;
+    protected string $tableName;
 
     /**
      * the DatabaseAdapter constructor.
-     *
-     * @param Rule $eloquent
+     * @param ContainerInterface $container 
+     * @param string $tableName 
+     * @return void 
      */
-    public function __construct(ContainerInterface $container, $tableName)
+    public function __construct(ContainerInterface $container, string $tableName)
     {
         $this->tableName = $tableName;
         $this->eloquent = make(Rule::class, ['attributes' => [], 'table' => $this->tableName]);
@@ -78,7 +68,7 @@ class DatabaseAdapter implements Adapter, BatchAdapter, UpdatableAdapter, Filter
         $this->initTable();
     }
 
-    public function initTable()
+    public function initTable(): void
     {
         if (!Schema::hasTable($this->tableName)) {
             Schema::create($this->tableName, function (Blueprint $table) {
@@ -99,8 +89,9 @@ class DatabaseAdapter implements Adapter, BatchAdapter, UpdatableAdapter, Filter
      *
      * @param string $ptype
      * @param array  $rule
+     * @return array
      */
-    public function savePolicyLine(string $ptype, array $rule)
+    public function savePolicyLine(string $ptype, array $rule): array
     {
         $col['ptype'] = $ptype;
         foreach ($rule as $key => $value) {
@@ -273,8 +264,8 @@ class DatabaseAdapter implements Adapter, BatchAdapter, UpdatableAdapter, Filter
      *
      * @param string $sec
      * @param string $ptype
-     * @param string[][] $oldRules
-     * @param string[][] $newRules
+     * @param array $oldRules
+     * @param array $newRules
      * @return void
      */
     public function updatePolicies(string $sec, string $ptype, array $oldRules, array $newRules): void

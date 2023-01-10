@@ -14,10 +14,7 @@ class CasbinProcess extends AbstractProcess
 
     public string $name = 'casbin-watcher';
 
-    /**
-     * @var Server
-     */
-    protected $server;
+    protected Server $server;
 
     public function handle(): void
     {

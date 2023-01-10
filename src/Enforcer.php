@@ -34,11 +34,7 @@ use Hyperf\Utils\ApplicationContext;
  */
 class Enforcer
 {
-
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
+    protected ContainerInterface $container;
 
     /**
      *

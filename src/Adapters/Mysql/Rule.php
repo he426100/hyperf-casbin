@@ -9,18 +9,13 @@ use Hyperf\DbConnection\Model\Model;
  */
 class Rule extends Model
 {
-
     /**
-     * Fillable.
-     *
-     * @var array
+     * The attributes that are mass assignable.
      */
     protected array $fillable = ['ptype', 'v0', 'v1', 'v2', 'v3', 'v4', 'v5'];
 
     /**
-     * timestamps
-     * 
-     * @var bool
+     * Indicates if the model should be timestamped.
      */
     public bool $timestamps = false;
 
@@ -35,5 +30,4 @@ class Rule extends Model
         $this->setTable($table);
         parent::__construct($attributes);
     }
-
 }

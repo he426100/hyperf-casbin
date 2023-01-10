@@ -12,10 +12,7 @@ use Casbin\Enforcer;
 class OnPipeMessageListener implements ListenerInterface
 {
 
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container)
     {
